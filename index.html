@@ -408,35 +408,14 @@
     </div>
 
 
-   <!-- Modal de PIX -->
-<div id="pixModal" class="modal">
-    <div class="modal-content" style="text-align: center;">
-        <h3>Pagamento via PIX</h3>
-        <p>Para pagar via PIX, use o CPF: <strong>00617541965</strong> ou o QR Code abaixo. Não se esqueça de informar o valor correspondente ao VIP desejado.</p>
-
-        <!-- Formulário para o jogador -->
-        <form id="pixForm" style="margin-top: 15px;">
-            <label for="playerNick" style="display: block; margin-bottom: 5px;">Seu Nickname:</label>
-            <input type="text" id="playerNick" name="playerNick" placeholder="Digite seu nickname" required style="width: 100%; padding: 8px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px;">
-
-            <label for="vipName" style="display: block; margin-bottom: 5px;">Nome do VIP Desejado:</label>
-            <input type="text" id="vipName" name="vipName" placeholder="Digite o nome do VIP" required style="width: 100%; padding: 8px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px;">
-
-            <p style="margin-top: 10px;">QR Code para pagamento:</p>
-            <img src="qrcode-pix.png" alt="QR Code PIX" style="width: 200px; height: 200px; margin: 10px 0;">
-
-            <button type="submit" id="submitButton" style="margin-top: 10px; padding: 10px 20px; background-color: #4CAF50; color: white; border: none; border-radius: 4px; cursor: pointer;">
-                Confirmar Dados
-            </button>
-        </form>
-
-        <button id="closeModalButton" style="margin-top: 15px; padding: 10px 20px; background-color: #f44336; color: white; border: none; border-radius: 4px; cursor: pointer;">
-            Fechar
-        </button>
+    <!-- Modal de PIX -->
+    <div id="pixModal" class="modal">
+        <div class="modal-content">
+            <h3>Pagamento via PIX</h3>
+            <p>Para pagar via PIX, use o CPF: 00617541965</p>
+            <button id="closeModalButton">Fechar</button>
+        </div>
     </div>
-</div>
-
-
 
 
 
@@ -487,7 +466,7 @@
             }
 
             function redirectToPayment(productName) {
-                const paymentUrl = https://www.exemplo.com/pagamento?produto=${encodeURIComponent(productName)};
+                const paymentUrl = `https://www.exemplo.com/pagamento?produto=${encodeURIComponent(productName)}`;
                 window.location.href = paymentUrl;
             }
 
