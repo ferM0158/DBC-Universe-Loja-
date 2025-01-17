@@ -379,126 +379,33 @@
             <img src="dragonball1.png" alt="Vip Berseker">
             <h3>Vip Berseker</h3>
             <p>R$15</p>
+            <img src="Vip_Berseker_QR.png" alt="QR Code Vip Berseker">
             <button>Comprar</button>
         </div>
         <div class="product">
-            <img src="dragonball2.png" alt="Vip Ssj5">
-            <h3>Vip Ssj5</h3>
+            <img src="dragonball2.png" alt="Vip SSJ5">
+            <h3>Vip SSJ5</h3>
             <p>R$65</p>
+            <img src="Vip_SSJ5_QR.png" alt="QR Code Vip SSJ5">
             <button>Comprar</button>
         </div>
         <div class="product">
             <img src="dragonball3.png" alt="Vip Black">
             <h3>Vip Xeno</h3>
             <p>R$30</p>
+            <img src="Vip_Xeno_QR.png" alt="QR Code Vip Xeno">
             <button>Comprar</button>
         </div>
         <div class="product">
             <img src="dragonball4.png" alt="Vip Bestial">
             <h3>Vip Bestial</h3>
             <p>R$65</p>
+            <img src="Vip_Bestial_QR.png" alt="QR Code Vip Bestial">
             <button>Comprar</button>
         </div>
         <div class="product">
             <img src="dragonball5.png" alt="Vip Xeno">
             <h3>Vip Black</h3>
             <p>R$65</p>
-            <button>Comprar</button>
-        </div>
-    </div>
-
-
-    <!-- Modal de PIX -->
-    <div id="pixModal" class="modal">
-        <div class="modal-content">
-            <h3>Pagamento via PIX</h3>
-            <p>Para pagar via PIX, use o CPF: 00617541965</p>
-            <button id="closeModalButton">Fechar</button>
-        </div>
-    </div>
-
-
-
-    <footer class="footer">
-        <h2>Dragon Ball Universe</h2>
-        <div> <img src="goku.png" alt="Goku"> <img src="vegeta.png" alt="Vegeta"> <img src="shenron.png" alt="Shenron"> </div>
-        <p>Conecte-se com a gente nas redes sociais!</p>
-        <div class="footer-social">
-            <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a>
-            <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i> Twitter</a>
-            <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
-            <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
-            <a href="https://discord.gg/JB4F5vTPgG" target="_blank"><i class="fab fa-discord"></i> Discord</a>
-        </div>
-        <div class="copyright">
-
-
-        </div>
-        <div class="links"> <a href="#privacy">Política de Privacidade</a> <a href="#terms">Termos de Uso</a> <a href="#contact">Contato</a> </div>
-        <p>&copy; 2025 Dragon Ball Universe X. Todos os direitos reservados.</p>
-    </footer>
-
-    <!-- javascript-->
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const buttons = document.querySelectorAll(".product button");
-
-            buttons.forEach(button => {
-                button.addEventListener("click", function() {
-                    const productName = sanitize(this.parentElement.querySelector("h3").innerText);
-                    const paymentMethod = prompt("Escolha o método de pagamento:  2 para PIX");
-
-                    if (paymentMethod === "1") {
-                        redirectToPayment(productName);
-                    } else if (paymentMethod === "2") {
-                        showPixInfo(productName);
-                    } else {
-                        alert("Método de pagamento inválido.");
-                    }
-                });
-            });
-
-            function sanitize(input) {
-                const element = document.createElement('div');
-                element.innerText = input;
-                return element.innerHTML;
-            }
-
-            function redirectToPayment(productName) {
-                const paymentUrl = `https://www.exemplo.com/pagamento?produto=${encodeURIComponent(productName)}`;
-                window.location.href = paymentUrl;
-            }
-
-            function showPixInfo(productName) {
-                // Exibe o modal do PIX
-                const modal = document.getElementById("pixModal");
-                modal.style.display = "flex";
-            }
-
-            // Função para fechar o modal
-            function closeModal() {
-                const modal = document.getElementById("pixModal");
-                modal.style.display = "none";
-            }
-
-            // Fechar o modal ao clicar fora da área do conteúdo
-            window.onclick = function(event) {
-                const modal = document.getElementById("pixModal");
-                if (event.target === modal) {
-                    modal.style.display = "none";
-                }
-            }
-
-            // Fechar o modal quando o botão de fechar for clicado
-            const closeModalButton = document.getElementById("closeModalButton");
-            if (closeModalButton) {
-                closeModalButton.addEventListener("click", closeModal);
-            }
-        });
-    </script>
-
-
-</body>
-
-</html>
+            <img src="Vip_Black_QR.png" alt="QR Code Vip Black">
+            <button
