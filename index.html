@@ -238,6 +238,83 @@
         .additional-info a {
             color: #ff6600;
         }
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #333;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        
+        .container h1 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #ffcc00;
+        }
+        
+        .container p {
+            font-size: 1em;
+            color: #ffcc00;
+        }
+        
+        .container form {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .container label {
+            font-size: 1em;
+            margin: 10px 0 5px;
+            color: #ffcc00;
+        }
+        
+        .container input,
+        .container select {
+            padding: 10px;
+            margin-bottom: 15px;
+            font-size: 1em;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            color: #333;
+            background-color: #ffcc00;
+        }
+        
+        .container input[type="checkbox"] {
+            margin-right: 10px;
+        }
+        
+        .container button {
+            padding: 15px;
+            background-color: #e60012;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            margin-top: 10px;
+        }
+        
+        .container button:hover {
+            background-color: #b3000f;
+        }
+        
+        .container .warning {
+            background-color: #ffcc00;
+            padding: 10px;
+            border: 1px solid #cc5200;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        
+        .qr-code {
+            display: none;
+            margin-top: 20px;
+            text-align: center;
+        }
     </style>
 </head>
 
@@ -288,7 +365,7 @@
             <p>R$30</p>
             <button onclick="showQRCode('vipXeno')">Comprar</button>
             <div class="qr-code" id="vipXeno">
-                <img src="VIp Xeno.png" alt="QR Code Vip Xeno">
+                <img src="Vip Xeno.png" alt="QR Code Vip Xeno">
                 <div class="additional-info">
                     <p>Ou use a chave pix: <strong>0061754196</strong></p>
                     <p>O Vip Será Entregue Por Um Admin em até 3 horas após o pagamento</p>
@@ -333,6 +410,92 @@
         </div>
         <div class="copyright">© 2025 DBC Universe X</div>
     </div>
+
+    <div class="container">
+        <div class="warning">
+            <p>AVISO IMPORTANTE: Os pacotes selecionados serão ativados no servidor em que você estiver online ou no próximo que você entrar.</p>
+            <p>Exemplo: Se você joga no Universo 01, ao comprar o VIP, entre apenas no Universo 01 até o VIP ser ativado, porque uma vez ativado naquele universo, não será possível transferi-lo.</p>
+        </div>
+        <h1>Finalizar Pedido</h1>
+        <form id="checkoutForm">
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
+
+            <label for="nickname">Nick (nome no jogo):</label>
+            <input type="text" id="nickname" name="nickname" placeholder="Digite seu nick" required>
+
+            <label for="fullname">Nome completo:</label>
+            <input type="text" id="fullname" name="fullname" placeholder="Digite seu nome completo" required>
+
+            <label for="discordname">Nome no Discord:</label>
+            <input type="text" id="discordname" name="discordname" placeholder="Digite seu nome no Discord" required>
+
+            <label for="payment">Forma de pagamento:</label>
+            <select id="payment" name="payment" required>
+                <option value="paypal">PayPal</option>
+                <option value="pix">PIX</option>
+            </select>
+
+            <label>
+                <input type="checkbox" name="terms" required>
+                Eu aceito os Termos de Pagamento
+            </label>
+
+            <button type="submit">Comprar (R$ 218,69)</button>
+        </form>
+
+        <div class="qr-code" id="qrCode">
+            <img src="SeuQRCode.png" alt="QR Code">
+            <div class="additional-info">
+                <p>Ou use a chave pix: <strong>0061754196</strong></p>
+                <p>O Vip Será Entregue Por Um Admin em até 3 horas após o pagamento</p>
+                <p>Qualquer dúvida entre em contato com algum admin do nosso discord, (ADM, Gerente, Dono)</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('checkoutForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const email = document.getElementById('email').value;
+            const nickname = document.getElementById('nickname').value;
+            const fullname = document.getElementById('fullname').value;
+            const discordname = document.getElementById('discordname').value;
+            const payment = document.getElementById('payment').value;
+            const terms = document.getElementsByName('terms')[0].checked;
+
+            if (terms) {
+                const webhookUrl = 'https://discord.com/api/webhooks/1329968211055345756/7AE772Cr0sIi6TiDN4VmR0y4Tqe1Tryb_uGjZDoQYHxQJJJy6lxK9otsvBPWiCiBL3DV';
+
+                const message = {
+                    content: `**Novo Pedido**\nE-mail: ${email}\nNick: ${nickname}\nNome completo: ${fullname}\nNome no Discord: ${discordname}\nForma de pagamento: ${payment}`,
+                };
+
+                fetch(webhookUrl, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify(message),
+                    })
+                    .then(response => {
+                        if (response.ok) {
+                            alert('Formulário enviado com sucesso!');
+                            // Exibir QR Code
+                            document.getElementById('qrCode').style.display = 'block';
+                        } else {
+                            alert('Erro ao enviar o formulário.');
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Erro:', error);
+                        alert('Erro ao enviar o formulário.');
+                    });
+            } else {
+                alert('Você deve aceitar os Termos de Pagamento para continuar.');
+            }
+        });
+        </script>
 
     <script>
         function showQRCode(vipId) {
