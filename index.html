@@ -471,8 +471,7 @@
                 const webhookUrl = 'https://discord.com/api/webhooks/1329968211055345756/7AE772Cr0sIi6TiDN4VmR0y4Tqe1Tryb_uGjZDoQYHxQJJJy6lxK9otsvBPWiCiBL3DV';
 
                 const message = {
-                    content: `**Novo Pedido** E-mail: ${email} Nick: ${nickname} Nome completo: ${fullname} Nome no Discord: ${discordname} Forma de pagamento: ${payment} VIP desejado: ${vip}
-                };
+                    content: `**Novo Pedido**\nE-mail: ${email}\nNick: ${nickname}\nNome completo: ${fullname}\nNome no Discord: ${discordname}\nForma de pagamento: ${payment},
 
                 fetch(webhookUrl, {
                         method: 'POST',
