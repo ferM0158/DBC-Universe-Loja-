@@ -19,7 +19,7 @@
             overflow-x: hidden;
             font-weight: bold;
         }
-
+        
         .header {
             background-color: #ff6600;
             padding: 10px;
@@ -29,22 +29,22 @@
             top: 0;
             z-index: 1000;
         }
-
+        
         .header .cupom {
             float: left;
         }
-
+        
         .header .cart {
             float: right;
             color: white;
         }
-
+        
         .header::after {
             content: "";
             display: table;
             clear: both;
         }
-
+        
         .store {
             background-color: #fff;
             padding: 40px;
@@ -53,7 +53,7 @@
             max-width: 1200px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
-
+        
         .product {
             background-color: #dbdd61;
             padding: 20px;
@@ -67,29 +67,29 @@
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             transition: box-shadow 0.3s;
         }
-
+        
         .product:hover {
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
         }
-
+        
         .product img {
             max-width: 100%;
             height: auto;
             border-radius: 10px;
         }
-
+        
         .product h3 {
             margin: 15px 0;
             font-size: 1.5em;
             color: #333;
         }
-
+        
         .product p {
             margin: 10px 0;
             font-size: 1.2em;
             color: #666;
         }
-
+        
         .product button {
             position: relative;
             background-color: #ffcc00;
@@ -104,7 +104,7 @@
             transition: color 0.4s, background-color 0.4s;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
-
+        
         .product button::before {
             content: '';
             position: absolute;
@@ -117,43 +117,43 @@
             transition: transform 0.4s ease-in-out;
             z-index: -1;
         }
-
+        
         .product button:hover {
             color: #fff;
             box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
         }
-
+        
         .product button:focus {
             outline: none;
         }
-
+        
         .product button:active {
             transform: scale(0.98);
         }
-
+        
         .product button:hover::before {
             transform: translateX(0);
         }
-
+        
         @media (max-width: 768px) {
             .product {
                 width: calc(50% - 40px);
                 margin: 20px auto;
             }
         }
-
+        
         @media (max-width: 480px) {
             .product {
                 width: calc(100% - 40px);
                 margin: 20px auto;
             }
         }
-
+        
         .qr-code {
             display: none;
             margin-top: 20px;
         }
-
+        
         .navbar {
             position: fixed;
             top: 50px;
@@ -165,18 +165,18 @@
             display: flex;
             justify-content: center;
         }
-
+        
         .navbar ul {
             list-style-type: none;
             display: flex;
             margin: 0;
             padding: 0;
         }
-
+        
         .navbar ul li {
             margin: 0 15px;
         }
-
+        
         .navbar ul li a {
             color: #fff;
             text-decoration: none;
@@ -186,59 +186,59 @@
             border-radius: 4px;
             transition: background-color 0.3s;
         }
-
+        
         .navbar ul li a:hover {
             background-color: #FF8C00;
         }
-
+        
         .footer {
             background-color: rgb(128, 86, 25);
             padding: 20px;
             text-align: center;
             border-radius: 15px;
         }
-
+        
         .footer-social {
             display: flex;
             justify-content: center;
             gap: 15px;
             margin-top: 20px;
         }
-
+        
         .footer-social a {
             color: #1c1c1c;
             text-decoration: none;
         }
-
+        
         footer .copyright {
             margin: 0;
         }
-
+        
         footer .links {
             margin-top: 10px;
         }
-
+        
         footer .links a {
             color: #ffcc00;
             text-decoration: none;
             margin: 0 10px;
             transition: color 0.3s;
         }
-
+        
         footer .links a:hover {
             color: #ff9900;
         }
-
+        
         .additional-info {
             margin-top: 10px;
             font-size: 1em;
             color: #333;
         }
-
+        
         .additional-info a {
             color: #ff6600;
         }
-
+        
         .container {
             max-width: 600px;
             margin: 50px auto;
@@ -424,14 +424,14 @@
             <label for="nickname">Nick (nome no jogo):</label>
             <input type="text" id="nickname" name="nickname" placeholder="Digite seu nick" required>
 
-            <label for="fullname">Nome completo(Por favor, insira o nome completo do titular da conta PIX.):</label>
+            <label for="fullname">Nome completo (Por favor, insira o nome completo do titular da conta PIX.):</label>
             <input type="text" id="fullname" name="fullname" placeholder="Digite seu nome completo" required>
 
             <label for="discordname">Nome no Discord:</label>
             <input type="text" id="discordname" name="discordname" placeholder="Digite seu nome no Discord" required>
 
-            <label for="vipname">Nome no Vip:</label>
-            <input type="text" id="vipname" name="vipname" placeholder="Digite O Vip Desejado" required>
+            <label for="vipname">Nome do VIP desejado:</label>
+            <input type="text" id="vipname" name="vipname" placeholder="Digite o nome do VIP desejado" required>
 
             <label for="payment">Forma de pagamento:</label>
             <select id="payment" name="payment" required>
@@ -451,69 +451,71 @@
             <img src="SeuQRCode.png" alt="QR Code">
             <div class="additional-info">
                 <p>Ou use a chave pix: <strong>0061754196</strong></p>
-                <p>O Vip Será Entregue Por Um Admin em até 3 horas após o pagamento</p>
-                <p>Qualquer dúvida entre em contato com algum admin do nosso discord, (ADM, Gerente, Dono)</p>
+                <p>O VIP será entregue por um admin em até 3 horas após o pagamento</p>
+                <p>Qualquer dúvida, entre em contato com algum admin do nosso Discord (ADM, Gerente, Dono)</p>
             </div>
         </div>
-    </div>
 
-    <script>
-        document.getElementById('checkoutForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            const email = document.getElementById('email').value;
-            const nickname = document.getElementById('nickname').value;
-            const fullname = document.getElementById('fullname').value;
-            const discordname = document.getElementById('discordname').value;
-            const payment = document.getElementById('payment').value;
-            const terms = document.getElementsByName('terms')[0].checked;
+        <script>
+            document.getElementById('checkoutForm').addEventListener('submit', function(event) {
+                event.preventDefault();
+                const email = document.getElementById('email').value;
+                const nickname = document.getElementById('nickname').value;
+                const fullname = document.getElementById('fullname').value;
+                const discordname = document.getElementById('discordname').value;
+                const vipname = document.getElementById('vipname').value;
+                const payment = document.getElementById('payment').value;
+                const terms = document.getElementsByName('terms')[0].checked;
 
-            if (terms) {
-                const webhookUrl = 'https://discord.com/api/webhooks/1329968211055345756/7AE772Cr0sIi6TiDN4VmR0y4Tqe1Tryb_uGjZDoQYHxQJJJy6lxK9otsvBPWiCiBL3DV';
+                if (terms) {
+                    const webhookUrl = 'https://discord.com/api/webhooks/1329968211055345756/7AE772Cr0sIi6TiDN4VmR0y4Tqe1Tryb_uGjZDoQYHxQJJJy6lxK9otsvBPWiCiBL3DV';
 
-                const message = {
-                    content: `**Novo Pedido**\nE-mail: ${email}\nNick: ${nickname}\nNome completo: ${fullname}\nNome no Discord: ${discordname}\nForma de pagamento: ${payment},
+                    const message = {
+                        content: `**Novo Pedido**\nE-mail: ${email}\nNick: ${nickname}\nNome completo: ${fullname}\nNome no Discord: ${discordname}\nNome do VIP desejado: ${vipname}\nForma de pagamento: ${payment}`
+                    };
 
-                fetch(webhookUrl, {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json',
-                        },
-                        body: JSON.stringify(message),
-                    })
-                    .then(response => {
-                        if (response.ok) {
-                            alert('Formulário enviado com sucesso!');
-                            // Exibir QR Code
-                            document.getElementById('qrCode').style.display = 'block';
-                        } else {
+                    fetch(webhookUrl, {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                            },
+                            body: JSON.stringify(message),
+                        })
+                        .then(response => {
+                            if (response.ok) {
+                                alert('Formulário enviado com sucesso!');
+                                // Exibir QR Code
+                                document.getElementById('qrCode').style.display = 'block';
+                            } else {
+                                alert('Erro ao enviar o formulário.');
+                            }
+                        })
+                        .catch(error => {
+                            console.error('Erro:', error);
                             alert('Erro ao enviar o formulário.');
-                        }
-                    })
-                    .catch(error => {
-                        console.error('Erro:', error);
-                        alert('Erro ao enviar o formulário.');
-                    });
-            } else {
-                alert('Você deve aceitar os Termos de Pagamento para continuar.');
-            }
-        });
+                        });
+                } else {
+                    alert('Você deve aceitar os Termos de Pagamento para continuar.');
+                }
+            });
         </script>
 
-    <script>
-        function showQRCode(vipId) {
-            // Esconde todos os QR Codes
-            const qrCodes = document.querySelectorAll('.qr-code');
-            qrCodes.forEach(function(qr) {
-                qr.style.display = 'none';
-            });
 
-            // Exibe o QR Code específico
-            const qrCode = document.getElementById(vipId);
-            if (qrCode) {
-                qrCode.style.display = 'block';
+        <script>
+            function showQRCode(vipId) {
+                // Esconde todos os QR Codes
+                const qrCodes = document.querySelectorAll('.qr-code');
+                qrCodes.forEach(function(qr) {
+                    qr.style.display = 'none';
+                });
+
+                // Exibe o QR Code específico
+                const qrCode = document.getElementById(vipId);
+                if (qrCode) {
+                    qrCode.style.display = 'block';
+                }
             }
-        }
-    </script>
+        </script>
 </body>
 
 </html>
